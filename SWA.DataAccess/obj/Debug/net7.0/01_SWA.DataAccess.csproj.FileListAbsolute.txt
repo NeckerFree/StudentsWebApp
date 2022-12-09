@@ -1,0 +1,14 @@
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\bin\Debug\net7.0\01_SWA.DataAccess.deps.json
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\bin\Debug\net7.0\01_SWA.DataAccess.runtimeconfig.json
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\bin\Debug\net7.0\01_SWA.DataAccess.dll
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\bin\Debug\net7.0\01_SWA.DataAccess.pdb
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\01_SWA.DataAccess.csproj.AssemblyReference.cache
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\01_SWA.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\01_SWA.DataAccess.AssemblyInfoInputs.cache
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\01_SWA.DataAccess.AssemblyInfo.cs
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\01_SWA.DataAccess.csproj.CoreCompileInputs.cache
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\01_SWA.DataAccess.dll
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\refint\01_SWA.DataAccess.dll
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\01_SWA.DataAccess.pdb
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\01_SWA.DataAccess.genruntimeconfig.cache
+C:\Elio\_Take-Home\TalentHH\StudentsWebApp\SWA.DataAccess\obj\Debug\net7.0\ref\01_SWA.DataAccess.dll
