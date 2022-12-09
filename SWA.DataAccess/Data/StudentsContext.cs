@@ -19,10 +19,10 @@ public partial class StudentsContext : DbContext
     //    options.UseSqlite(Configuration.GetConnectionString("StudentsDBConnection"));
     //}
 
-    // public StudentsContext(DbContextOptions<StudentsContext> options)
-    // : base(options)
-    // {
-    // }
+    public StudentsContext(DbContextOptions<StudentsContext> options)
+    : base(options)
+    {
+    }
 
     public virtual DbSet<Student> Students { get; set; } = null!;
 
