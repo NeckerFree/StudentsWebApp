@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "KyreefEeX4QDBt5uDiZHtsYFHPJb8T4YFmgryaabazQ=",
+  "Source": "SWA.WebAPIService",
+  "BasePath": "_content/SWA.WebAPIService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
