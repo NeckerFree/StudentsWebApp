@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-md-4 offset-md-4">
+      <button type="button" (click)='openAddOrUpdateModal(0)' class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</div>
+<h1 id="tableLabel">Students</h1>
+
+<p>List of Students.</p>
+
+<p *ngIf="!students?.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="students.length">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">UserName</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">Age</th>
+      <th scope="col">Career</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sd of students">
+      <th scope="row">{{sd.id}}</th>
+      <td>{{sd.username}}</td>
+      <td>{{sd.firstName}}</td>
+      <td>{{sd.lastName}}</td>
+      <td>{{sd.age}}</td>
+      <td>{{sd.career}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="modal fade"
+     id="addorupdatemodal"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{addorupdatemodalTitle}}</h5>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <input type="hidden" id="studentId" [(ngModel)]="studentForm.id">
+            <div class="mb-3">
+              <label for="username" class="form-label">User Name</label>
+              <input type="text"
+                     class="form-control"
+                     id="username"
+                     [(ngModel)]="studentForm.username" />
+            </div>
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text"
+                     class="form-control"
+                     id="firstName"
+                     [(ngModel)]="studentForm.firstName" />
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text"
+                     class="form-control"
+                     id="lastName"
+                     [(ngModel)]="studentForm.lastName" />
+            </div>
+            <div class="mb-3">
+              <label for="age" class="form-label">Age</label>
+              <input type="number"
+                     class="form-control"
+                     id="age"
+                     [(ngModel)]="studentForm.age" />
+            </div>
+            <div class="mb-3">
+              <label for="career" class="form-label">Gender</label>
+              <select class="form-select" [(ngModel)]="studentForm.career" aria-label="Default select career">
+                <option selected>Open this select menu</option>
+                <option value="Systems Engineer">Systems Engineer</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Lawyer">Lawyer</option>
+                <option value="psychologist">psychologist</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" (click)="createorUpdateStudent()" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
