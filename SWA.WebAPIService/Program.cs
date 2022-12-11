@@ -6,11 +6,8 @@ using SWA.WebAPIServices.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddScoped<StudentService>();
 
 //builder.Services.AddSingleton<IStudentService, StudentService>();
 var connectionString = builder.Configuration.GetConnectionString("StudentsDBConnection");
@@ -18,6 +15,13 @@ builder.Services.AddDbContext<StudentsContext>(option => option.UseSqlite(connec
 //builder.Services.AddScoped<IStudentService, StudentService>();
 //builder.Services.AddTransient<IStudentService, StudentService>();
 builder.Services.AddScoped<StudentService>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Cors", p =>
+    {
+        p.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,23 +31,24 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("Cors");
+
 app.UseHttpsRedirection();
 
-
-app.MapGet("/api/students", async  ([FromServices] StudentService studentService) =>
+app.MapGet("/api/students", async ([FromServices] StudentService studentService) =>
 {
 
-    var students =await studentService.GetAll();
+    var students = await studentService.GetAll();
     return Results.Ok(students);
 });
 
-app.MapGet("/api/students/{id:long}", (int id, [FromServices]  StudentService studentService) =>
+app.MapGet("/api/students/{id:long}", (int id, [FromServices] StudentService studentService) =>
 {
     var student = studentService.Get(id);
     return Results.Ok(student);
 });
 
-app.MapPost("/api/students", (Student student, [FromServices]  StudentService studentService) =>
+app.MapPost("/api/students", (Student student, [FromServices] StudentService studentService) =>
 {
 
     var newStudent = studentService.Add(student);
@@ -59,7 +64,7 @@ app.MapPut("/api/students", (Student student, [FromServices] StudentService stud
 
 app.MapDelete("/api/students/{id:int}", async (int id, [FromServices] StudentService studentService) =>
 {
-   await studentService.Remove(id);
+    await studentService.Remove(id);
     return Results.Ok();
 });
 

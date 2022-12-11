@@ -5,20 +5,6 @@ namespace SWA.DataAccess.Data;
 
 public partial class StudentsContext : DbContext
 {
-    //protected readonly IConfiguration Configuration;
-
-    //public StudentsContext(IConfiguration configuration)
-    //{
-    //    Configuration = configuration;
-    //}
-
-
-    //protected override void OnConfiguring(DbContextOptionsBuilder options)
-    //{
-    //    // connect to sqlite database
-    //    options.UseSqlite(Configuration.GetConnectionString("StudentsDBConnection"));
-    //}
-
     public StudentsContext(DbContextOptions<StudentsContext> options)
     : base(options)
     {
