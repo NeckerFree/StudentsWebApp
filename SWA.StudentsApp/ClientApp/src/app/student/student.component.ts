@@ -10,13 +10,15 @@ declare var window: any;
 })
 export class StudentComponent implements OnInit {
   addorupdatemodal: any;
+  deleteModal: any;
+  studentIdToDelete: number = 0;
   studentForm: Student = {
     id: 0,
-    username: 'SaritaDream',
-    firstName: 'Sarita',
-    lastName: 'Dream',
-    age: 25,
-    career: 'Dancer',
+    username: '',
+    firstName: '',
+    lastName: '',
+    age: 0,
+    career: '',
   };
 
   addorupdatemodalTitle: string = '';
@@ -29,6 +31,10 @@ export class StudentComponent implements OnInit {
 
     this.addorupdatemodal = new window.bootstrap.Modal(
       document.getElementById('addorupdatemodal')
+    );
+
+    this.deleteModal = new window.bootstrap.Modal(
+      document.getElementById('deleteModal')
     );
   }
 
@@ -44,15 +50,19 @@ export class StudentComponent implements OnInit {
   }
   openAddOrUpdateModal(studentId: number) {
     if (studentId === 0) {
-      this.addorupdatemodalTitle = 'Add';
+      this.addorupdatemodalTitle = 'Add Student';
       this.studentForm = {
         id: 0,
-        username: 'SaritaDream',
-        firstName: 'Sarita',
-        lastName: 'Dream',
-        age: 25,
-        career: 'Dancer',
+        username: '',
+        firstName: '',
+        lastName: '',
+        age: 0,
+        career: '',
       };
+      this.addorupdatemodal.show();
+    }else{
+      this.addorupdatemodalTitle = 'Update Student';
+      this.studentForm = this.students.filter(s => s.id === studentId)[0];
       this.addorupdatemodal.show();
     }
   }
@@ -68,6 +78,31 @@ export class StudentComponent implements OnInit {
           console.log(error);
         },
       });
+    }else{
+      this.studentService.update(this.studentForm).subscribe({
+      next:(data) => {
+        this.students = this.students.filter(_ => _.id !== data.id);
+        this.students.unshift(data);
+            this.addorupdatemodal.hide();
+      }
+      })
     }
+  }
+  openDeleteModal(studentId: number) {
+    this.studentIdToDelete = studentId;
+    this.deleteModal.show();
+  }
+ 
+  confirmDelete(){
+    this.studentService.delete(this.studentIdToDelete)
+    .subscribe({
+      next:(data) => {
+      this.students = this.students.filter(_ => _.id !== this.studentIdToDelete);
+        this.deleteModal.hide();
+      },
+      error:(error) => {
+        console.log(error);
+      }
+    })
   }
 }

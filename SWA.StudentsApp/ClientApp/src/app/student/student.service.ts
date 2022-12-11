@@ -19,4 +19,15 @@ export class StudentService {
       payload
     );
   }
+  update(payload: Student) {
+    return this.httpClient.put<Student>(
+      'https://localhost:7210/api/students',
+      payload
+    );
+  }
+  delete(studentId: number) {
+    return this.httpClient.delete(
+      `https://localhost:7210/api/students/${studentId}`
+    );
+  }
 }
