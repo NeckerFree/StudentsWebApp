@@ -1,36 +1,5 @@
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -39,54 +8,54 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+  <!-- - [🚀 Live Demo](#live-demo) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
 - [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
+<!-- - [🔭 Future Features](#future-features) -->
+- [🤝 Contributing](#contributing) 
 - [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
+<!-- - [🙏 Acknowledgements](#acknowledgements) -->
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Students Web App <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+**Students Web App** is a Fullstack application that implements an Angular App consumming a Minimal API service to manage the CRUD of a Sqlite database with a Student table.
 
-**[your_project__name]** is a...
+## 🛠 Built With <a name="built-with">.NET/VS Code</a>
 
-## 🛠 Built With <a name="built-with"></a>
-
-### Tech Stack <a name="tech-stack"></a>
-
-> Describe the tech stack and include only the relevant sections that apply to your project.
+### Tech Stack <a name="tech-stack">Angular + Minimal API</a>
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/visualstudio/javascript/tutorial-asp-net-core-with-angular?view=vs-2022">ASP.NET Core app with Angular</a></li>
+    <li><a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/">Bootstrap</a></li>
+    <li><a href="https://angular.io/guide/form-validation">Angular Form Validation</a></li>
   </ul>
-</details>
+  </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
+    <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-7.0">Minimal API</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/openapi?view=aspnetcore-7.0">Open API Support(Swagger)</a></li>
+    </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/ef/core/providers/sqlite/?tabs=dotnet-core-cli">SQLite EF Core Database Provider</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=dotnet-core-cli">SQLite Scaffolding</a></li>
   </ul>
 </details>
 
@@ -94,21 +63,20 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+- **GenericRepository**
+- **Dependency Injection**
+- **Unit Testing**
+- **Git Flow**
+- **CORS**
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+<!-- ## 🚀 Live Demo <a name="live-demo"></a> -->
 
-> Add a link to your deployed project.
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+<!-- - [Live Demo Link](https://yourdeployedapplicationlink.com) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,59 +84,64 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-<!--
-Example command:
+Option 1: Visual Studio .NET 2022 
+1. Open the solution StudentsWebApp.sln
+2. Configure Multiple Startup Projects as shown in the image:
+[Image Multiple Startup Projects]()
+3. Rebuild Solution to assure that all projects are compiling
+4. Click Start of F5 
 
-```sh
- gem install rails
-```
- -->
+Option 2: Visual Studio Code with extensions:
+- C# for Visual Studio Code
+- vscode-solution-explorer
+1. Open the folder StudentsWebApp containning the solution 
+2. Enter `code .` command to open VS Code
+3. Open folder \SWA.WebAPIService in Terminal and run `dotnet build` and `dotnet run` commands
+4. Open folder \SWA.StudentsApp in Terminal and run `dotnet build` and `dotnet run` commands
+
+Common steps:
+5. Api Service and Angular App start simultaneosly
+6. Wait until Angular App loads Students data
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
+
 Example commands:
 
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
+  `cd [Desired_Folder]`
+  `git clone https://github.com/NeckerFree/StudentsWebApp`
+  `cd StudentsWebApp`
 
 ### Install
 
 Install this project with:
+ 
+If necessary configure Base API Service URL in 
+SWA.StudentsApp\ClientApp\proxy.conf.js 
+variable: `target: 'https://localhost:7210/'`
 
-<!--
-Example command:
+Step 2,3 in Option 1 (VS.NET)
+Steps 3,4 in Option 2 (VS Code)
 
-```sh
-  cd my-project
-  gem install
-```
---->
+Copy the database to a any different folder of this solution 
+- Default folder (C:\Temp\): 
+- Config file: SWA.WebAPIService\appsettings.json
+- String connection: "StudentsDBConnection": "Data Source=C:\\Temp\\sample_DB.db3"
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
+Step 4 in Option 1 (VS.NET)
+Steps 3,4 in Option 2 (VS Code)
 
 ### Run tests
 
@@ -182,17 +155,10 @@ Example command:
 ```
 --->
 
-### Deployment
+<!-- ### Deployment
 
-You can deploy this project using:
+You can deploy this project using: -->
 
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -200,31 +166,21 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Elio Cortés**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@NeckerFree](https://github.com/NeckerFree)
+- Twitter: [@ElioCortesM](https://twitter.com/ElioCortesM)
+- LinkedIn: [elionelsoncortes](https://www.linkedin.com/in/elionelsoncortes/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
-## 🔭 Future Features <a name="future-features"></a>
+<!-- ## 🔭 Future Features <a name="future-features"></a> -->
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
+<!-- - [ ] **[new_feature_1]**
 - [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[new_feature_3]** -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -242,19 +198,17 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project please start my project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
-
+<!-- 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 > Give credit to everyone who inspired your codebase.
 
-I would like to thank...
+I would like to thank... -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -264,13 +218,16 @@ I would like to thank...
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[Question_1]**
+- **What commands are required to Scaffold SQLite database?**
 
-  - [Answer_1]
+  - `dotnet add package Microsoft.EntityFrameworkCore.Design`
+  - `dotnet tool install --global dotnet-ef`
+  - `dotnet add package Microsoft.EntityFrameworkCore.Sqlite`
+  - `dotnet ef dbcontext scaffold "data source=C:\Temp\sample_DB.db3" Microsoft.EntityFrameworkCore.Sqlite --output-dir Models --context-dir Data --namespace SWA.DataAccess.Models --context-namespace SWA.DataAccess.Data --context StudentsContext -f --no-onconfiguring`
 
-- **[Question_2]**
+- **How can I generate and/or modifies files based on a schematic.**
 
-  - [Answer_2]
+  - [Angular Generate](https://angular.io/cli/generate)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -279,7 +236,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
