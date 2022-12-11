@@ -10,24 +10,24 @@ export class StudentService {
   constructor(private httpClient:HttpClient)  { }
 
   get() {
-    return this.httpClient.get<Student[]>('https://localhost:7210/api/students')
+    return this.httpClient.get<Student[]>('/api/students')
   }
 
   post(payload: Student) {
     return this.httpClient.post<Student>(
-      'https://localhost:7210/api/students',
+      '/api/students',
       payload
     );
   }
   update(payload: Student) {
     return this.httpClient.put<Student>(
-      'https://localhost:7210/api/students',
+      '/api/students',
       payload
     );
   }
   delete(studentId: number) {
     return this.httpClient.delete(
-      `https://localhost:7210/api/students/${studentId}`
+      `/api/students/${studentId}`
     );
   }
 }
