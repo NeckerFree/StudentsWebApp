@@ -103,9 +103,13 @@ In order to run this project you need:
 Option 1: Visual Studio .NET 2022 
 1. Open the solution StudentsWebApp.sln
 2. Configure Multiple Startup Projects as shown in the image:
-[Image Multiple Startup Projects]()
+
+![Net Config](https://user-images.githubusercontent.com/8497300/206937456-87eee0f5-ab65-4646-9312-b53ca8e71696.png)
+
 3. Rebuild Solution to assure that all projects are compiling
 4. Click Start of F5 
+5. Api Service and Angular App start simultaneosly
+6. Wait until Angular App loads students data
 
 Option 2: Visual Studio Code with extensions:
 - C# for Visual Studio Code
@@ -114,10 +118,12 @@ Option 2: Visual Studio Code with extensions:
 2. Enter `code .` command to open VS Code
 3. Open folder \SWA.WebAPIService in Terminal and run `dotnet build` and `dotnet run` commands
 4. Open folder \SWA.StudentsApp in Terminal and run `dotnet build` and `dotnet run` commands
+5. Open Service URL in the browser: https://localhost:7210/swagger/index.html
+6. Open App URL in the browser: https://localhost:7183
+7. Wait until Angular App loads students data
 
-Common steps:
-5. Api Service and Angular App start simultaneosly
-6. Wait until Angular App loads Students data
+![VS Code Run](https://user-images.githubusercontent.com/8497300/206937417-57a6c675-2eb8-43d4-a19b-289db63f2680.png)
+
 
 ### Setup
 
