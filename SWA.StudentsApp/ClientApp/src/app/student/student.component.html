@@ -1,0 +1,142 @@
+<p>List of Students.</p>
+
+<p *ngIf="!students?.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="students.length">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">UserName</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">Age</th>
+      <th scope="col">Career</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sd of students">
+      <th scope="row">{{sd.id}}</th>
+      <td>{{sd.username}}</td>
+      <td>{{sd.firstName}}</td>
+      <td>{{sd.lastName}}</td>
+      <td>{{sd.age}}</td>
+      <td>{{sd.career}}</td>
+      <td>
+        <button class="btn btn-primary" (click)="openAddOrUpdateModal(sd.id)">Edit</button> |
+        <button class="btn btn-primary" (click)="openDeleteModal(sd.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button type="button" (click)='openAddOrUpdateModal(0)' class="btn btn-primary">Add New</button>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="addorupdatemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{addorupdatemodalTitle}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+         <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <input type="hidden" id="studentId" [(ngModel)]="studentForm.id">
+              <div class="mb-3">
+                <label for="username" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="username" minlength="4" maxlength="20"
+                       required [(ngModel)]="studentForm.username" #username="ngModel" />
+                <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert-msg">
+                  <div *ngIf="username.errors?.['required']">
+                    UserName is required.
+                  </div>
+                  <div *ngIf="username.errors?.['minlength']">
+                    UserName must be at least 4 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" minlength="4" maxlength="20" required
+                       [(ngModel)]="studentForm.firstName" #firstName="ngModel" />
+                <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert-msg">
+                  <div *ngIf="firstName.errors?.['required']">
+                    First Name is required.
+                  </div>
+                  <div *ngIf="firstName.errors?.['minlength']">
+                    First Name must be at least 4 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" minlength="4" maxlength="20" required
+                       [(ngModel)]="studentForm.lastName" #lastName="ngModel" />
+                <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert-msg">
+                  <div *ngIf="lastName.errors?.['required']">
+                    Last Name is required.
+                  </div>
+                  <div *ngIf="lastName.errors?.['minlength']">
+                    Last Name must be at least 4 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" min="18" max="100"
+                       [(ngModel)]="studentForm.age" #age="ngModel" />
+                <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert-msg">
+                  <div *ngIf="age.errors?.['required']">
+                    Age is required.
+                  </div>
+                  <div *ngIf="age.errors?.['min'] || age.errors?.['max']">
+                    Age must be between 18 and 100.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="career" class="form-label">Career</label>
+                <input type="text" class="form-control" id="career" minlength="4" maxlength="50" required
+                       [(ngModel)]="studentForm.career" #career="ngModel" />
+                <div *ngIf="career.invalid && (career.dirty || career.touched)" class="alert-msg">
+                  <div *ngIf="career.errors?.['required']">
+                    Career is required.
+                  </div>
+                  <div *ngIf="career.errors?.['minlength']">
+                    Career must be at least 4 characters long.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" [disabled]="username.invalid || firstName.invalid || lastName.invalid || age.invalid || career.invalid" (click)="createorUpdateStudent()" class="btn btn-primary">Save changes</button>
+        </div>
+         </div>
+  </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Student</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1>Delete Confirmation</h1>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="confirmDelete()" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
