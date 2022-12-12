@@ -37,7 +37,7 @@ namespace SWA.APITests
             using var client = application.CreateClient();
             Student student = new Student()
             {
-                Id = 6,
+                Id = 0,
                 Age = 45,
                 Career = "Doctor",
                 FirstName = "Jacobo",
@@ -46,7 +46,7 @@ namespace SWA.APITests
             };
             var content = JsonConvert.SerializeObject(student);
             var response = await client.PostAsJsonAsync("/api/students", content);
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Equal(HttpStatusCode.Created, response.StatusCode);
         }
 
         [Fact]
@@ -56,7 +56,7 @@ namespace SWA.APITests
             using var client = application.CreateClient();
             Student student = new Student()
             {
-                Id = 6,
+                Id = 9,
                 Age = 45,
                 Career = "Lawyer",
                 FirstName = "Jacobo",
@@ -75,8 +75,8 @@ namespace SWA.APITests
             using var client = application.CreateClient();
             Student student = new Student();
             var content = JsonConvert.SerializeObject(student);
-            var response = await client.DeleteAsync($"/api/students/{6}");
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            var response = await client.DeleteAsync($"/api/students/{55}");
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         }
 
     }
