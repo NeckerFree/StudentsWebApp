@@ -30,6 +30,16 @@
 
 **Students Web App** is a Fullstack application that implements an Angular App consumming a Minimal API service to manage the CRUD of a Sqlite database with a Student table.
 
+# Web API Service Image:
+![Web API Service](https://user-images.githubusercontent.com/8497300/206936899-ae4fea5e-b1d1-4412-9a4b-1e63451f8bd5.png)
+
+# Application Images:
+![Students App](https://user-images.githubusercontent.com/8497300/206936932-df91a9bf-5c19-48b9-ac9e-d624780dbf04.png)
+
+![New Student](https://user-images.githubusercontent.com/8497300/206936938-7a94f5d0-44a6-4c82-a9aa-290c97cd1c04.png)
+
+![Delete Confirm](https://user-images.githubusercontent.com/8497300/206936946-d26408c0-de5d-470e-ac85-37dc91659a99.png)
+
 ## 🛠 Built With <a name="built-with">.NET/VS Code</a>
 
 ### Tech Stack <a name="tech-stack">Angular + Minimal API</a>
