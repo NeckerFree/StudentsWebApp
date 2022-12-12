@@ -14,10 +14,10 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
+  <!-- - [Run tests](#run-tests) -->
   <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
 - [👥 Authors](#authors)
-<!-- - [🔭 Future Features](#future-features) -->
+- [🔭 Future Features](#future-features) 
 - [🤝 Contributing](#contributing) 
 - [⭐️ Show your support](#support)
 <!-- - [🙏 Acknowledgements](#acknowledgements) -->
@@ -100,7 +100,7 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-Option 1: Visual Studio .NET 2022 
+Option 1: Visual Studio .NET 2022 updated to use NET Core 7
 1. Open the solution StudentsWebApp.sln
 2. Configure Multiple Startup Projects as shown in the image:
 
@@ -159,9 +159,9 @@ To run the project, execute the following command:
 Step 4 in Option 1 (VS.NET)
 Steps 3,4 in Option 2 (VS Code)
 
-### Run tests
+<!-- ### Run tests
 
-To run tests, run the following command:
+To run tests, run the following command: -->
 
 <!--
 Example command:
@@ -192,11 +192,11 @@ You can deploy this project using: -->
 
 <!-- FUTURE FEATURES -->
 
-<!-- ## 🔭 Future Features <a name="future-features"></a> -->
+## 🔭 Future Features <a name="future-features"></a> 
 
-<!-- - [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]** -->
+- [ ] **To complete unit testing configuration**
+<!-- - [ ] **[new_feature_2]**
+- [ ] **[new_feature_3]**  -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
